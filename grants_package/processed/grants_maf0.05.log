@@ -1,0 +1,29 @@
+PLINK v1.90b3.45 64-bit (13 Jan 2017)
+Options in effect:
+  --bfile ../grantsThomsons2017_maxMissing0.2
+  --maf 0.05
+  --make-bed
+  --no-sex
+  --out grants_maf0.05
+
+Hostname: MacBook-Air.local
+Working directory: /Users/na399/OneDrive - Københavns Universitet/Block 3/POP/Project/popgen-project/grants_package/processed
+Start time: Mon Mar 20 19:14:49 2017
+
+Random number seed: 1490033689
+8192 MB RAM detected; reserving 4096 MB for main workspace.
+35174 variants loaded from .bim file.
+95 people (0 males, 0 females, 95 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to grants_maf0.05.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 95 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.866355.
+27608 variants removed due to minor allele threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+7566 variants and 95 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to grants_maf0.05.bed + grants_maf0.05.bim + grants_maf0.05.fam ...
+done.
+
+End time: Mon Mar 20 19:14:49 2017

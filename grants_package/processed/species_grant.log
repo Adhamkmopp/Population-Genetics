@@ -1,0 +1,27 @@
+PLINK v1.90b3.45 64-bit (13 Jan 2017)
+Options in effect:
+  --bfile grants_maf0.05
+  --make-bed
+  --out species_grant
+  --update-ids ../species_as_within_fam_ID.txt
+
+Hostname: MacBook-Air.local
+Working directory: /Users/na399/OneDrive - Københavns Universitet/Block 3/POP/Project/popgen-project/grants_package/processed
+Start time: Mon Mar 20 19:15:24 2017
+
+Random number seed: 1490033724
+8192 MB RAM detected; reserving 4096 MB for main workspace.
+7566 variants loaded from .bim file.
+95 people (0 males, 0 females, 95 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to species_grant.nosex .
+--update-ids: 95 people updated.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 95 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.869627.
+7566 variants and 95 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to species_grant.bed + species_grant.bim + species_grant.fam ...
+done.
+
+End time: Mon Mar 20 19:15:24 2017
