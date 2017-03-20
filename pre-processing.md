@@ -8,7 +8,7 @@ mkdir processed
 cd processed
 ```
 
-## Set minimum allele frequency (maf) to 0.05
+## Set minimum minor allele frequency (maf) to 0.05
 
 ```
 plink --bfile ../grantsThomsons2017_maxMissing0.2 --maf 0.05 --no-sex --make-bed --out grants_maf0.05
