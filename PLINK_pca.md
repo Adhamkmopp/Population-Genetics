@@ -27,7 +27,9 @@ in `R`
 
 ```
 pca <- read.table("mds_locality.mds", header=T)
-plot(pca$C1 , pca$C2 , pch = 20 , cex = 1.5 , col = pca$IID)
+color = c('#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#8dd3c7','#ffffb3','#bebada','#fb8072','#80b1d3','#fdb462','#b3de69')
+plot(pca$C1 , pca$C2 , pch = 20 , cex = 2 , col = color[pca$IID])
+legend("topright",legend=c("Amboseli","Masai_Mara","Nairobi","Samburu","Tsavo","Sibiloi","Monduli","Maswa","Mkomazi_W","Mkomazi_E","Burigi","Ikiri-Rungwa","Aruba_Dam","Ugalla"),col=color,pch=20)
 ```
 
 
@@ -52,4 +54,5 @@ in `R`
 ```
 pca_species <- read.table("mds_species.mds", header=T)
 plot(pca_species$C1 , pca_species$C2 , pch = 20 , cex = 1.5 , col = pca_species$IID)
+legend("topright",legend=c("g.granti","g.robertsii","notata","petersii","thomsons"),col=c(1,2,3,4,5),pch=20)
 ```
