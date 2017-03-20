@@ -1,12 +1,12 @@
 # Calculate Fst with PLINK
 
-Create a new directory called `Fst` to store output files
+Create a new directory called `Fst` in `grants_package/processed` to store output files
 
 ```
 mkdir Fst
 ```
 
-##Fst between localities
+## Fst between localities
 
 
 ```
@@ -26,7 +26,7 @@ Weighted Fst estimate: 0.310916
 *NB 4 unknown samples were not included in the analysis somehow. Bug?*
 
 
-### Fst between species
+## Fst between species
 
 ```
 plink --bfile species_grants --fst --within ../species_clusters_no_outgroup.txt -out Fst/Fst_species_no_outgroup
