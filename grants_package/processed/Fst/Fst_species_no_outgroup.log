@@ -1,0 +1,30 @@
+PLINK v1.90b3.45 64-bit (13 Jan 2017)
+Options in effect:
+  --bfile species_grants
+  --fst
+  --out Fst/Fst_species_no_outgroup
+  --within ../species_clusters_no_outgroup.txt
+
+Hostname: MacBook-Air.local
+Working directory: /Users/na399/OneDrive - Københavns Universitet/Block 3/POP/Project/popgen-project/grants_package/processed
+Start time: Mon Mar 20 20:42:05 2017
+
+Random number seed: 1490038925
+8192 MB RAM detected; reserving 4096 MB for main workspace.
+7566 variants loaded from .bim file.
+95 people (0 males, 0 females, 95 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to Fst/Fst_species_no_outgroup.nosex .
+--within: 4 clusters loaded, covering a total of 92 people.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 95 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.869627.
+7566 variants and 95 people pass filters and QC.
+Note: No phenotypes present.
+Writing --fst report (4 populations) to Fst/Fst_species_no_outgroup.fst ...
+done.
+7566 markers with valid Fst estimates.
+Mean Fst estimate: 0.254961
+Weighted Fst estimate: 0.2885
+
+End time: Mon Mar 20 20:42:06 2017

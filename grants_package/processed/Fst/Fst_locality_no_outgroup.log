@@ -1,27 +1,30 @@
 PLINK v1.90b3.45 64-bit (13 Jan 2017)
 Options in effect:
-  --bfile grants_maf0.05
-  --make-bed
-  --out locality_grant
-  --update-ids ../locality_as_within_fam_ID.txt
+  --bfile locality_grants
+  --fst
+  --out Fst/Fst_locality_no_outgroup
+  --within ../locality_clusters_no_outgroup.txt
 
 Hostname: MacBook-Air.local
 Working directory: /Users/na399/OneDrive - Københavns Universitet/Block 3/POP/Project/popgen-project/grants_package/processed
-Start time: Mon Mar 20 19:15:18 2017
+Start time: Mon Mar 20 20:34:18 2017
 
-Random number seed: 1490033718
+Random number seed: 1490038458
 8192 MB RAM detected; reserving 4096 MB for main workspace.
 7566 variants loaded from .bim file.
 95 people (0 males, 0 females, 95 ambiguous) loaded from .fam.
-Ambiguous sex IDs written to locality_grant.nosex .
---update-ids: 95 people updated.
+Ambiguous sex IDs written to Fst/Fst_locality_no_outgroup.nosex .
+--within: 13 clusters loaded, covering a total of 88 people.
 Using 1 thread (no multithreaded calculations invoked).
 Before main variant filters, 95 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
 Total genotyping rate is 0.869627.
 7566 variants and 95 people pass filters and QC.
 Note: No phenotypes present.
---make-bed to locality_grant.bed + locality_grant.bim + locality_grant.fam ...
+Writing --fst report (13 populations) to Fst/Fst_locality_no_outgroup.fst ...
 done.
+7525 markers with valid Fst estimates (41 excluded).
+Mean Fst estimate: 0.282646
+Weighted Fst estimate: 0.310916
 
-End time: Mon Mar 20 19:15:18 2017
+End time: Mon Mar 20 20:34:18 2017
