@@ -1,0 +1,73 @@
+---
+title: "Multivariate analysis of genetic data: an introduction -- with Grant's Gazelle SNP Data"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Convert BED/BIM/FAM to RAW
+```{bash}
+plink --bfile grants_locality --recodeA --out grants_locality
+```
+
+Find the current working directory with the following command. Our data should be in `(current directory)/grants_package/`
+
+```{r}
+getwd()
+```
+
+Follow http://adegenet.r-forge.r-project.org/files/PRstats/practical-MVAintro.1.0.pdf
+
+Install the stable version of adegenet with dependencies
+
+```{r}
+install.packages("adegenet", dep=TRUE)
+```
+
+Load the useful packages 
+
+```{r, echo=FALSE}
+library("adegenet")
+library("ape")
+library("pegas")
+```
+
+Load PLINK .map file
+
+```{r}
+data_light <- read.PLINK("grants_package/grants_locality.raw")
+```
+
+Convert genlight to genind:
+
+```{r}
+data_light.mat <- as.matrix(data_light) # data_light is a genlight object
+data_light.mat[data_light.mat == 0] <- "1/1" # homozygote reference
+data_light.mat[data_light.mat == 1] <- "1/2" # heterozygote
+data_light.mat[data_light.mat == 2] <- "2/2" # homozygote alternate
+data_ind <- df2genind(data_light.mat, sep = "/", ploidy = 2)
+
+```
+
+
+## Asssesing population structure (page 15)
+
+"From Population structure is traditionally measured and tested using F statistics, in particular the Fst, which measures population differentiation (as the proportion of allelic variance occuring between groups). The package hierfstat implements a wealth of F statistics and related tests, now designed to work natively with genind objects. The devel version of the package is required for these features." 
+
+Load hierfstat:
+
+```{r}
+library("hierfstat")
+```
+
+
+"We can now use different methods for assessing population structure. We first compute overall F statistics, and then use Goudet's G statistics to test the existence of population structure. Try to interpret the following statistics and graphics:"
+
+
+```{r}
+seppop(data_light)
+```
+
+
