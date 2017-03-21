@@ -3,13 +3,13 @@ Options in effect:
   --bfile grants_maf0.05
   --make-bed
   --out locality_grants
-  --update-ids ../locality_as_within_fam_ID.txt
+  --update-ids ../locality_as_fam_ID.txt
 
 Hostname: MacBook-Air.local
 Working directory: /Users/na399/OneDrive - Københavns Universitet/Block 3/POP/Project/popgen-project/grants_package/processed
-Start time: Mon Mar 20 20:18:17 2017
+Start time: Tue Mar 21 10:53:49 2017
 
-Random number seed: 1490037497
+Random number seed: 1490090029
 8192 MB RAM detected; reserving 4096 MB for main workspace.
 7566 variants loaded from .bim file.
 95 people (0 males, 0 females, 95 ambiguous) loaded from .fam.
@@ -24,4 +24,4 @@ Note: No phenotypes present.
 --make-bed to locality_grants.bed + locality_grants.bim + locality_grants.fam
 ... done.
 
-End time: Mon Mar 20 20:18:17 2017
+End time: Tue Mar 21 10:53:49 2017

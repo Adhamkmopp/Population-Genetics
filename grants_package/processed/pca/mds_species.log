@@ -4,13 +4,13 @@ Options in effect:
   --cluster
   --mds-plot 2
   --out pca/mds_species
-  --within ../species_clusters.txt
+  --within ../new_species_clusters.clst
 
 Hostname: MacBook-Air.local
 Working directory: /Users/na399/OneDrive - Københavns Universitet/Block 3/POP/Project/popgen-project/grants_package/processed
-Start time: Mon Mar 20 21:43:51 2017
+Start time: Tue Mar 21 11:19:23 2017
 
-Random number seed: 1490042631
+Random number seed: 1490091563
 8192 MB RAM detected; reserving 4096 MB for main workspace.
 7566 variants loaded from .bim file.
 95 people (0 males, 0 females, 95 ambiguous) loaded from .fam.
@@ -30,4 +30,4 @@ Performing multidimensional scaling analysis (SVD algorithm, 2
 dimensions)... done.
 MDS solution written to pca/mds_species.mds .
 
-End time: Mon Mar 20 21:43:51 2017
+End time: Tue Mar 21 11:19:23 2017
