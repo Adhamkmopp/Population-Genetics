@@ -15,12 +15,12 @@ plink --bfile locality_grants --fst --within ../locality_clusters_no_outgroup.tx
 
 Result
 ```
---within: 13 clusters loaded, covering a total of 88 people.
+--within: 14 clusters loaded, covering a total of 92 people.
 
 ...
 
-Mean Fst estimate: 0.282646
-Weighted Fst estimate: 0.310916
+Mean Fst estimate: 0.283691
+Weighted Fst estimate: 0.307879
 ```
 
 *NB 4 unknown samples were not included in the analysis somehow. Bug?*
