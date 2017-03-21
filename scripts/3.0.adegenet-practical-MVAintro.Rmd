@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Convert BED/BIM/FAM to RAW
 ```{bash}
-plink --bfile grants_locality --recodeA --out grants_locality
+plink --bfile locality_grants --recodeA --out locality_grants
 ```
 
 Find the current working directory with the following command. Our data should be in `(current directory)/grants_package/`
@@ -37,7 +37,7 @@ library("pegas")
 Load PLINK .map file
 
 ```{r}
-data_light <- read.PLINK("grants_package/grants_locality.raw")
+data_light <- read.PLINK("../grants_package/processed/locality_grants.raw")
 ```
 
 Convert genlight to genind:
