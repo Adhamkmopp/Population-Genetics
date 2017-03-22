@@ -24,9 +24,6 @@ Install the stable version of adegenet with dependencies
 
 ```{r}
 install.packages("adegenet", dep=TRUE)
-install.packages("ape", dep=TRUE)
-install.packages("pegas", dep=TRUE)
-install.packages("hierfstat", dep=TRUE)
 ```
 
 Load the useful packages 
@@ -35,15 +32,24 @@ Load the useful packages
 library("adegenet")
 library("ape")
 library("pegas")
-library("hierfstat")
 ```
 
 Load PLINK .map file
 
 ```{r}
-data_light <- read.PLINK("../grants_package/processed/species_grants.raw")
+data_light <- read.PLINK("../grants_package/processed/locality_grants.raw")
 ```
 
+Convert genlight to genind:
+
+```{r}
+data_light.mat <- as.matrix(data_light) # data_light is a genlight object
+data_light.mat[data_light.mat == 0] <- "1/1" # homozygote reference
+data_light.mat[data_light.mat == 1] <- "1/2" # heterozygote
+data_light.mat[data_light.mat == 2] <- "2/2" # homozygote alternate
+data_ind <- df2genind(data_light.mat, sep = "/", ploidy = 2)
+
+```
 
 
 ## Asssesing population structure (page 15)
@@ -53,7 +59,7 @@ data_light <- read.PLINK("../grants_package/processed/species_grants.raw")
 Load hierfstat:
 
 ```{r}
-
+library("hierfstat")
 ```
 
 
@@ -65,7 +71,3 @@ seppop(data_light)
 ```
 
 
-```{r}
-pairwise.fst(data_local_stru)
-
-```
