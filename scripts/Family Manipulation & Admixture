@@ -1,0 +1,85 @@
+# Extracting species from the main grant file using the IDs constructed in R
+
+in R
+
+'''
+popinfo = read.table("grant.info")
+table(popinfo[,1])
+"Creates list with within family/individual IDs matching each species using popinfo"
+grantis <- popinfo$V4[which(popinfo$V2=='g.granti')]
+robertsiis<- popinfo$V4[which(popinfo$V2=='g.robertsii')]
+notatas<- popinfo$V4[which(popinfo$V2=='notata')]
+petersiis<- popinfo$V4[which(popinfo$V2=='petersii')]
+thomson <- popinfo$V4[which(popinfo$V2=='thomsons')]
+
+"Concatanates two lists as a dataframe with a new family ID (species) in the first list, and 1 for each individual ID to match the original grant.fam"
+granti<- data.frame(grantis, rep(1, length(grantis)))
+robertsii<- data.frame(robertsiis, rep(1, length(robertsiis)))
+notata<- data.frame(notatas, rep(1, length(notatas)))
+petersii<- data.frame(petersiis, rep(1, length(petersiis)))
+thomson<- data.frame(thomson, rep(1, length(thomson)))
+
+"Prints out the data frame above to be used for extraction of individuals according to their species"
+write.table(granti, 'granti.txt', quote=FALSE, row.names = FALSE, col.names = FALSE)
+write.table(robertsii, 'robertsii.txt', quote=FALSE, row.names = FALSE, col.names = FALSE)
+write.table(notata, 'notata.txt', quote=FALSE, row.names = FALSE, col.names = FALSE)
+write.table(petersii, 'petersii.txt', quote=FALSE, row.names = FALSE, col.names = FALSE)
+write.table(thomson, 'thomson.txt', quote=FALSE, row.names = FALSE, col.names = FALSE)
+
+"Creates a merge list for merging back all the extracted species after modifying their family IDs"
+name <- c(deparse(substitute(robertsii)),deparse(substitute(notata)),deparse(substitute(petersii)), deparse(substitute(thomson)))
+write(name, file="mergelist.txt")
+
+"Creates data frames of length 2 with new family ID a,d sequential within family ID"
+granti_fam <- data.frame(rep('g.granti', length(granti$grantis)), seq(1,length(granti$grantis)))
+robertsii_fam <- data.frame(rep('robertsii', length(robertsii$robertsiis)), seq(1,length(robertsii$robertsiis)))
+notata_fam <- data.frame(rep('notata', length(notata$notatas)), seq(1,length(notata$notatas)))
+petersii_fam <- data.frame(rep('petersii', length(petersii$petersiis)), seq(1,length(petersii$petersiis)))
+thomson_fam <- data.frame(rep('thomsons', length(thomson$thomson)), seq(1,length(thomson$thomson)))
+
+"Binds the new and old family IDs to be used for modifying family IDs through plink"
+granti_f= cbind(granti,granti_fam)
+robertsii_f= cbind(robertsii, robertsii_fam)
+petersii_f= cbind(petersii, petersii_fam)
+notata_f= cbind(notata, notata_fam)
+thomson_f =cbind(thomson, thomson_fam)
+
+
+write.table(granti_f, 'grantifam.txt', quote=FALSE, row.names = FALSE, col.names = FALSE)
+write.table(robertsii_f, 'robertsiifam.txt', quote=FALSE, row.names = FALSE, col.names = FALSE)
+write.table(notata_f, 'notatafam.txt', quote=FALSE, row.names = FALSE, col.names = FALSE)
+write.table(petersii_f, 'petersiifam.txt', quote=FALSE, row.names = FALSE, col.names = FALSE)
+write.table(thomson_f, 'thomsonfam.txt', quote=FALSE, row.names = FALSE, col.names = FALSE)
+'''
+
+## Extracting the correct species according to the species lists generated above
+plink --bfile grant --keep granti.txt --make-bed --out g.granti
+plink --bfile grant --keep robertsii.txt --make-bed --out robertsii
+plink --bfile grant --keep notata.txt --make-bed --out notata
+plink --bfile grant --keep petersii.txt --make-bed --out petersii
+plink --bfile grant --keep thomson.txt --make-bed --out thomson
+'''
+
+## Updating family IDs seperatly, then merging. Otherwise the order of family IDs will go unchanged if using the main grant file for updating family IDs
+
+plink --bfile notata --update-ids notatafam.txt --make-bed --out notata
+plink --bfile g.granti --update-ids grantifam.txt --make-bed --out g.granti
+plink --bfile petersii --update-ids petersiifam.txt --make-bed --out petersii
+plink --bfile robertsii --update-ids robertsiifam.txt --make-bed --out robertsii
+plink --bfile thomson --update-ids thomsonfam.txt --make-bed -out thomson
+
+## Mergin and filtering
+
+plink --bfile g.granti --merge-list mergelist.txt --make-bed --out merged
+plink --bfile merged --maf 0.05 --make-bed --out merged_filtered
+ 
+
+
+## Admixture analysis and CV error
+for i in 2 3 4 5; do admixture --cv grants_filtered.bed $i; done > cvoutput
+grep -i 'CV error' cvoutput
+ 
+CV error (K=2): 0.41373
+CV error (K=3): 0.37725
+CV error (K=4): 0.35210
+CV error (K=5): 0.35073
