@@ -1,0 +1,34 @@
+PLINK v1.90b3.45 64-bit (13 Jan 2017)
+Options in effect:
+  --bfile locality_grants
+  --cc
+  --cluster
+  --mds-plot 2
+  --out pca2/locality_strat
+  --ppc 1e-3
+  --read-genome pca2/locality_ibs.genome
+
+Hostname: MacBook-Air.local
+Working directory: /Users/na399/OneDrive - Københavns Universitet/Block 3/POP/Project/grants_package/processed
+Start time: Tue Mar 21 19:13:59 2017
+
+Note: --cc flag deprecated.  Use '--cluster cc'.
+Random number seed: 1490120039
+8192 MB RAM detected; reserving 4096 MB for main workspace.
+7566 variants loaded from .bim file.
+95 people (0 males, 0 females, 95 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to pca2/locality_strat.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 95 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.869627.
+7566 variants and 95 people pass filters and QC.
+Note: No phenotypes present.
+Clustering... done.
+Cluster solution written to pca2/locality_strat.cluster1 ,
+pca2/locality_strat.cluster2 , and pca2/locality_strat.cluster3 .
+Performing multidimensional scaling analysis (SVD algorithm, 2
+dimensions)... done.
+MDS solution written to pca2/locality_strat.mds .
+
+End time: Tue Mar 21 19:13:59 2017

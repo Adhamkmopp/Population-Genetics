@@ -1,4 +1,4 @@
-# spid-file generated: Wed Mar 22 14:49:44 CET 2017
+# spid-file generated: Wed Mar 22 22:20:55 CET 2017
 
 # PED Parser questions
 PARSER_FORMAT=PED
@@ -10,7 +10,7 @@ PED_PARSER_INCLUDE_MAP_QUESTION=true
 # Is the Phenotype absent in the input file?
 PED_PARSER_PHENOTYPE_QUESTION=true
 # Open MAP file
-PED_PARSER_MAP_FILE_QUESTION=/Users/na399/OneDrive - Københavns Universitet/Block 3/POP/Project/popgen-project/grants_package/processed/locality_grants.map
+PED_PARSER_MAP_FILE_QUESTION=C:\\Users\\namax\\OneDrive - Københavns Universitet\\Block 3\\POP\\Project\\popgen-project\\grants_package\\processed\\species_prune.map
 # Is the Individual ID column absent in the input file?
 PED_PARSER_IND_ID_QUESTION=false
 # Are the Paternal ID and the Maternal ID columns absent in the input file?

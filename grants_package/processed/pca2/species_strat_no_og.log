@@ -1,0 +1,36 @@
+PLINK v1.90b3.45 64-bit (13 Jan 2017)
+Options in effect:
+  --bfile species_grants
+  --cc
+  --cluster
+  --mds-plot 2
+  --out pca2/species_strat_no_og
+  --ppc 1e-3
+  --read-genome pca2/species_ibs.genome
+  --remove-fam outgroup_fam.txt
+
+Hostname: MacBook-Air.local
+Working directory: /Users/na399/OneDrive - Københavns Universitet/Block 3/POP/Project/grants_package/processed
+Start time: Wed Mar 22 10:45:34 2017
+
+Note: --cc flag deprecated.  Use '--cluster cc'.
+Random number seed: 1490175934
+8192 MB RAM detected; reserving 4096 MB for main workspace.
+7566 variants loaded from .bim file.
+95 people (0 males, 0 females, 95 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to pca2/species_strat_no_og.nosex .
+--remove-fam: 92 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 92 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.872688.
+7566 variants and 92 people pass filters and QC.
+Note: No phenotypes present.
+Clustering... done.
+Cluster solution written to pca2/species_strat_no_og.cluster1 ,
+pca2/species_strat_no_og.cluster2 , and pca2/species_strat_no_og.cluster3 .
+Performing multidimensional scaling analysis (SVD algorithm, 2
+dimensions)... done.
+MDS solution written to pca2/species_strat_no_og.mds .
+
+End time: Wed Mar 22 10:45:34 2017
