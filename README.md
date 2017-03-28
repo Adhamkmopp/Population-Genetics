@@ -4,20 +4,14 @@
 Natthawut Adulyanukosol, Adham Khaled, Emilia Rolander Langkjær, Povilas Matusevicius, Malou Fabricius Rægaard Storm, Tharsika Vimalasuntharam
 
 
----
-**NB This repository is under RAPID development for an exam project. Commits are pushed with an emphasis on SPEED rather than CLEANLINESS.**
-
----
-
 ## Directories:
 
-- original_data: given SNP data
-- processed_data: processed from original_data with commands given in `scripts\`
-- additional_files: files created for some analyses
-- results: output from analyses
-- scripts: as markdown or script files
+- [original_data](./original_data): given SNP data
+- [processed_data](./processed_data): processed from original_data with commands given in `scripts\`
+- [additional_files](./additional_files): files created for some analyses
+- [results](./results): output from analyses
+- [scripts](./scripts): as markdown or script files
 
----
 
 ## Scripts
 
