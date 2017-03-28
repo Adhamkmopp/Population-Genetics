@@ -1,0 +1,53 @@
+---
+title: "Multivariate analysis of genetic data: an introduction -- with Grant's Gazelle SNP Data"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Install the stable version of adegenet with dependencies
+
+```{r}
+install.packages("adegenet", dep=TRUE)
+install.packages("hierfstat", dep=TRUE)
+```
+
+Load the useful packages
+
+```{r, echo=FALSE}
+library("adegenet")
+library("hierfstat")
+```
+
+```
+
+Load STRUCTURE .stru file
+
+```{r}
+data_local_stru <- read.structure("../grants_package/processed/structure/locality_grants.stru", n.ind=95, n.loc=7566, onerowperind=FALSE, col.lab=1, col.pop=2, row.marknames=1, ask=FALSE)
+popNames(data_local_stru)<-c("Amboseli", "Mkomazi_E", "Burigi", "Ikiri-Rungwa", "Aruba_Dam", "Ugalla", "Masai_Mara",	"Nairobi",	"Samburu",	"Tsavo",	"Sibiloi",	"Monduli", "Maswa","Mkomazi_W")
+```
+
+
+## pairwise Fst
+```{r}
+dist_WC84 <- genet.dist(data_local_stru, method = "WC84")
+```
+
+
+```{r}
+pw_WCfst <- pairwise.WCfst(genind2hierfstat(data_local_stru))
+pw_fst_CI <- boot.ppfst(genind2hierfstat(data_local_stru),nboot=100,quant=c(0.025,0.975),diploid=TRUE,dig=4)
+```
+
+
+
+## pairwise genetic distance
+
+```{r}
+pop_local_stru <- genind2genpop(data_local_stru)
+
+pw_dist_stru <- dist.genpop(pop_local_stru, method = 1, diag = TRUE, upper = TRUE)
+```

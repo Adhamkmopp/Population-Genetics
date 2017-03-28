@@ -123,4 +123,3 @@ barplot(t(as.matrix(snpk8)), col= cols, border=NA,
         names.arg=(names), cex.names=0.8, las=2, ylab="Ancestry, K=8")
 par(las=2)
 axis(3, seq(0.5, 113.4,1.2) , tck=0, labels =species)
-
