@@ -26,7 +26,7 @@ library("hierfstat")
 Load STRUCTURE .stru file
 
 ```{r}
-data_local_stru <- read.structure("../grants_package/processed/structure/locality_grants.stru", n.ind=95, n.loc=7566, onerowperind=FALSE, col.lab=1, col.pop=2, row.marknames=1, ask=FALSE)
+data_local_stru <- read.structure("../additional_files/locality_grants.stru", n.ind=95, n.loc=7566, onerowperind=FALSE, col.lab=1, col.pop=2, row.marknames=1, ask=FALSE)
 popNames(data_local_stru)<-c("Amboseli", "Mkomazi_E", "Burigi", "Ikiri-Rungwa", "Aruba_Dam", "Ugalla", "Masai_Mara",	"Nairobi",	"Samburu",	"Tsavo",	"Sibiloi",	"Monduli", "Maswa","Mkomazi_W")
 ```
 
