@@ -24,9 +24,9 @@ library("poppr")
 ```
 
 
-Convert PLINK binary files to .ped with plink --recode 
-Then convert .ped to STRUCTURE format by PGDSpider
-Load STRUCTURE .stru file
+Convert PLINK binary files to .ped with plink --recode.
+Then convert .ped to STRUCTURE format by PGDSpider.
+Load STRUCTURE .stru file.
 
 ```{r}
 data_local_stru <- read.structure("../additional_files/locality_grants.stru", n.ind=95, n.loc=7566, onerowperind=FALSE, col.lab=1, col.pop=2, row.marknames=1, ask=FALSE)
@@ -40,10 +40,6 @@ dist_WC84 <- genet.dist(data_local_stru, method = "WC84")
 ```
 
 
-```{r}
-pw_WCfst <- pairwise.WCfst(genind2hierfstat(data_local_stru))
-pw_fst_CI <- boot.ppfst(genind2hierfstat(data_local_stru),nboot=100,quant=c(0.025,0.975),diploid=TRUE,dig=4)
-```
 
 
 
