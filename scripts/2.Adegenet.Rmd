@@ -12,6 +12,7 @@ Install the stable version of adegenet with dependencies
 ```{r}
 install.packages("adegenet", dep=TRUE)
 install.packages("hierfstat", dep=TRUE)
+install.packages("poppr", dep=TRUE)
 ```
 
 Load the useful packages
@@ -19,9 +20,9 @@ Load the useful packages
 ```{r, echo=FALSE}
 library("adegenet")
 library("hierfstat")
+library("poppr")
 ```
 
-```
 
 Load STRUCTURE .stru file
 
@@ -50,4 +51,12 @@ pw_fst_CI <- boot.ppfst(genind2hierfstat(data_local_stru),nboot=100,quant=c(0.02
 pop_local_stru <- genind2genpop(data_local_stru)
 
 pw_dist_stru <- dist.genpop(pop_local_stru, method = 1, diag = TRUE, upper = TRUE)
+```
+
+
+## Produce a basic summary table for population genetic analyses including Nei's gene diversity (expected heterozygosity)
+
+```{r}
+summary <- poppr(data_local_stru)
+
 ```
