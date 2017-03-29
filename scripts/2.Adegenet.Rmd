@@ -24,6 +24,8 @@ library("poppr")
 ```
 
 
+Convert PLINK binary files to .ped with plink --recode 
+Then convert .ped to STRUCTURE format by PGDSpider
 Load STRUCTURE .stru file
 
 ```{r}
