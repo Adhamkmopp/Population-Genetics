@@ -1,0 +1,27 @@
+PLINK v1.90b3.45 64-bit (13 Jan 2017)
+Options in effect:
+  --bfile processed_data/locality_grants
+  --extract results/pca/locality_prune.prune.in
+  --genome
+  --out results/pca/locality_ibs
+
+Hostname: MacBook-Air.local
+Working directory: /Users/na399/OneDrive - Københavns Universitet/Block 3/POP/Project/popgen-project
+Start time: Wed Mar 29 11:58:26 2017
+
+Random number seed: 1490781506
+8192 MB RAM detected; reserving 4096 MB for main workspace.
+7566 variants loaded from .bim file.
+95 people (0 males, 0 females, 95 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to results/pca/locality_ibs.nosex .
+--extract: 6471 variants remaining.
+Using up to 4 threads (change this with --threads).
+Before main variant filters, 95 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.867979.
+6471 variants and 95 people pass filters and QC.
+Note: No phenotypes present.
+IBD calculations complete.
+Finished writing results/pca/locality_ibs.genome .
+
+End time: Wed Mar 29 11:58:26 2017
