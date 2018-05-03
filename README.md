@@ -3,6 +3,8 @@
 ##### Author: (alphabetical order)
 Natthawut Adulyanukosol, Adham Khaled, Emilia Rolander Langkjær, Povilas Matusevicius, Malou Fabricius Rægaard Storm, Tharsika Vimalasuntharam
 
+## Course Summary:
+Learning population genetics theory by applying the concepts directly. The task for the final project was to determine the population structure and admixture in a sample group of spacially disparate populations of gazelle subpecies in Kenya.
 
 ## Directories:
 
